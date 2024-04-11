@@ -10,14 +10,11 @@
 #include "freertos/FreeRTOS.h"
 
 #include "sdkconfig.h"
+#include "esp_check.h"
 #include "esp_rom_sys.h"
 #include <assert.h>
 
 typedef portMUX_TYPE multi_heap_lock_t;
-
-inline bool addr_not_null(void* addr) {
-    return addr != NULL;
-}
 
 /* Because malloc/free can happen inside an ISR context,
    we need to use portmux spinlocks here not RTOS mutexes */
