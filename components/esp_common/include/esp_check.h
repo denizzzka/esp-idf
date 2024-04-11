@@ -303,7 +303,7 @@ extern "C" {
 /**
  * Checks if pointer is NULL without "the comparison will always evaluate as true/false"
  */
-inline bool addr_not_null(void* addr) {
+static inline bool addr_not_null(void* addr) {
     return addr != NULL;
 }
 
