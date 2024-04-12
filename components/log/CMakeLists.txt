@@ -20,3 +20,6 @@ if(NOT ${target} STREQUAL "linux")
         target_sources(${COMPONENT_TARGET} PRIVATE log_noos.c)
     endif()
 endif()
+
+# TODO: can be fixed in esp_log.h
+target_compile_options(${COMPONENT_LIB} PUBLIC -Wno-error=tautological-compare)
