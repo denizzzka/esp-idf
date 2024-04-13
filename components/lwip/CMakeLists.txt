@@ -228,3 +228,5 @@ if(CONFIG_LWIP_ENABLE)
         endforeach()
     endif()
 endif()
+
+target_compile_options(${COMPONENT_LIB} PUBLIC -Wno-error=parentheses-equality)
