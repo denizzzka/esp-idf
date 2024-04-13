@@ -23,6 +23,8 @@ idf_component_register(SRCS "${srcs}"
     REQUIRES ${reqs}
     PRIV_REQUIRES ${priv_reqs})
 
+target_compile_options(${COMPONENT_LIB} PUBLIC -Wno-error=parentheses-equality)
+
 if(${target} STREQUAL "linux")
     # set BUILD_DIR because partition_linux.c uses a file created in the build directory
     target_compile_definitions(${COMPONENT_LIB} PRIVATE "BUILD_DIR=\"${build_dir}\"")
