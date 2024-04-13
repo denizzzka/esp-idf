@@ -165,3 +165,6 @@ if(NOT BOOTLOADER_BUILD)
         target_link_libraries(${COMPONENT_LIB} PRIVATE "-u esp_crypto_dpa_prot_include_impl")
     endif()
 endif()
+
+# Unused value in riscv/rv_utils.h
+target_compile_options(${COMPONENT_LIB} PUBLIC -Wno-error=unused-value)
