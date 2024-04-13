@@ -293,4 +293,4 @@ elseif(CONFIG_HAL_DEFAULT_ASSERTION_LEVEL EQUAL 2)
     target_link_libraries(${COMPONENT_LIB} INTERFACE "-u __assert_func")
 endif()
 
-target_compile_options(${COMPONENT_LIB} PRIVATE "-Wno-error=self-assign" "-Xclang=-analyzer-disable-all-checks")
+target_compile_options(${COMPONENT_LIB} PRIVATE -Wno-error=self-assign -Xclang=-analyzer-disable-all-checks)
